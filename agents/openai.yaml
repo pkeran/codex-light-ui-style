@@ -1,0 +1,5 @@
+interface:
+  display_name: "Codex Light UI Style"
+  short_description: "Light blue-white UI styling guidance"
+  default_prompt: "Use $codex-light-ui-style to restyle this interface with a light Codex-like blue-white visual system."
+  brand_color: "#339CFF"
