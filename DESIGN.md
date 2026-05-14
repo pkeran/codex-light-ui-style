@@ -3,6 +3,16 @@ version: alpha
 name: Codex Light UI Style
 description: Light cool white-blue design system for professional tool UIs inspired by Codex app aesthetics.
 colors:
+  primary: "#339CFF"
+  primary-strong: "#2F91FF"
+  primary-soft: "#EAF4FF"
+  neutral-0: "#FFFFFF"
+  neutral-25: "#F8FBFF"
+  neutral-50: "#F7FAFD"
+  neutral-75: "#F5F8FC"
+  neutral-300: "#DCE7F3"
+  neutral-700: "#687386"
+  neutral-950: "#171A1F"
   bg: "#F7FAFD"
   bg-alt: "#F5F8FC"
   panel: "#FFFFFF"
@@ -16,6 +26,17 @@ colors:
   active-bg: "#DDEEFF"
   gradient-start: "#F8FBFF"
   gradient-end: "#EEF5FC"
+states:
+  hover-surface: "#EAF4FF"
+  active-surface: "#DDEEFF"
+  focus-ring: "#B7D9FF"
+  disabled-opacity: "0.52"
+  transition-fast: "140ms"
+  transition-normal: "180ms"
+elevation:
+  flat: "none"
+  soft: "0 8px 24px rgba(120, 160, 210, 0.08)"
+  overlay: "0 16px 40px rgba(116, 150, 194, 0.14)"
 typography:
   headline-lg:
     fontFamily: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif
@@ -67,6 +88,7 @@ components:
     rounded: "{rounded.full}"
     typography: "{typography.label-md}"
     padding: 14px
+    transitionDuration: "{states.transition-normal}"
   button-default-hover:
     backgroundColor: "{colors.accent-soft}"
     textColor: "{colors.accent-strong}"
@@ -74,24 +96,42 @@ components:
     rounded: "{rounded.full}"
     typography: "{typography.label-md}"
     padding: 14px
+    transitionDuration: "{states.transition-normal}"
   button-primary:
     backgroundColor: "{colors.accent}"
     textColor: "#FFFFFF"
     rounded: "{rounded.full}"
     typography: "{typography.label-md}"
     padding: 14px
+    transitionDuration: "{states.transition-normal}"
   button-primary-hover:
     backgroundColor: "{colors.accent-strong}"
     textColor: "#FFFFFF"
     rounded: "{rounded.full}"
     typography: "{typography.label-md}"
     padding: 14px
+    transitionDuration: "{states.transition-normal}"
   card-default:
     backgroundColor: "{colors.panel}"
     textColor: "{colors.text-primary}"
     borderColor: "{colors.border}"
     rounded: "{rounded.lg}"
     padding: 24px
+    shadow: "{elevation.soft}"
+  input-default:
+    backgroundColor: "{colors.panel}"
+    textColor: "{colors.text-primary}"
+    borderColor: "{colors.border}"
+    rounded: "{rounded.md}"
+    typography: "{typography.body-md}"
+    padding: 14px
+  input-focus:
+    backgroundColor: "{colors.panel}"
+    textColor: "{colors.text-primary}"
+    borderColor: "{states.focus-ring}"
+    rounded: "{rounded.md}"
+    typography: "{typography.body-md}"
+    padding: 14px
   nav-item:
     backgroundColor: "transparent"
     textColor: "{colors.text-secondary}"
@@ -106,6 +146,20 @@ components:
     textColor: "{colors.text-secondary}"
   icon-active:
     textColor: "{colors.accent}"
+  badge-neutral:
+    backgroundColor: "{colors.panel}"
+    textColor: "{colors.text-secondary}"
+    borderColor: "{colors.border}"
+    rounded: "{rounded.full}"
+    typography: "{typography.body-sm}"
+    padding: 8px
+  badge-active:
+    backgroundColor: "{colors.active-bg}"
+    textColor: "{colors.accent-strong}"
+    borderColor: "{colors.accent-soft}"
+    rounded: "{rounded.full}"
+    typography: "{typography.body-sm}"
+    padding: 8px
 ---
 
 # Codex Light UI Style
@@ -143,6 +197,23 @@ Allow only one broad, very soft background gradient:
 
 Do not turn normal cards, panels, or common components into gradient objects.
 
+## Surfaces & Hierarchy
+
+Surface hierarchy should be semantic, not theatrical.
+
+- **Workspace background** stays cold white or pale blue-white.
+- **Primary panels** are white and carry most functional content.
+- **Secondary surfaces** may step slightly cooler or softer to group controls.
+- **Overlay surfaces** may use slightly stronger elevation, but they still belong to the same color family.
+
+The preferred stack is:
+
+1. tonal separation
+2. thin borders
+3. spacing
+4. typography
+5. shadow only where still needed
+
 ## Typography
 
 Typography should feel crisp, modern, and operational. Prefer a strong system-sans stack over expressive or novelty typography.
@@ -154,7 +225,7 @@ Typography should feel crisp, modern, and operational. Prefer a strong system-sa
 
 The system should read like a professional tool, not an editorial spread or a startup landing page.
 
-## Layout
+## Layout & Density
 
 Layout should prioritize scan speed and containment.
 
@@ -163,6 +234,8 @@ Layout should prioritize scan speed and containment.
 - Keep horizontal alignment disciplined.
 - Prefer structured sections, toolbars, cards, and rails over floating ornamental clusters.
 - Leave enough whitespace to reduce noise, but do not create empty “hero” zones that weaken operational density.
+
+Different app surfaces may use different density, but the same structural language must persist across overview dashboards, workbenches, settings, logs, and forms.
 
 ## Elevation & Depth
 
@@ -186,6 +259,26 @@ The shape language should feel contemporary and controlled.
 
 Do not mix many unrelated radius styles on one screen. The system should feel coherent and engineered.
 
+## Interaction States
+
+Interactive states should feel precise and visible.
+
+- Hover should lightly acknowledge intent, usually through pale-blue or tonal change.
+- Active should read clearly through pale-blue surfaces and blue text/icon emphasis.
+- Focus should rely on crisp outline or border reinforcement, not glowing halos.
+- Disabled should remain legible and understandable without collapsing into invisibility.
+
+State transitions should be short and quiet. Prefer roughly `140ms` to `180ms` timing.
+
+## Motion
+
+Motion should be almost invisible.
+
+- Prefer soft fades, slight translate, or small tonal shifts.
+- Avoid springy, bouncy, or playful motion language.
+- Avoid large cinematic entrance animations.
+- If motion attracts more attention than the content, it is too strong.
+
 ## Components
 
 Component styling should reinforce the five high-level principles.
@@ -198,6 +291,19 @@ Component styling should reinforce the five high-level principles.
 - **Lists / tables / toolbars:** Keep them clean, lightly separated, and operational. Avoid decorative backgrounds that compete with the data.
 
 For extended component rules, read `references/component-families.md`.
+
+## App Surface Patterns
+
+This design language should scale across multiple app scenarios:
+
+- overview dashboard
+- list/detail workbench
+- settings/configuration
+- history/log activity surfaces
+- forms and data entry
+- drawers and inspectors
+
+For those patterns, read `references/app-surface-patterns.md`.
 
 ## Do's and Don'ts
 

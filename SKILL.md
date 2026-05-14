@@ -30,10 +30,11 @@ Do not use this skill when the user explicitly wants:
 
 1. Read `DESIGN.md` first.
 2. If the task changes buttons, navigation, cards, tables, drawers, forms, or other UI parts, read `references/component-families.md`.
-3. If the task includes visible copy, labels, badges, counters, headings, or empty states, read `references/writing-tone.md`.
-4. If the task touches hover, active, focus, disabled, contrast, or state visibility, read `references/accessibility-rules.md`.
-5. If the output starts drifting toward glow, noise, over-styling, or generic AI dashboard aesthetics, read `references/do-dont.md`.
-6. Before finishing, run through `references/quality-gates.md`.
+3. If the task is about overview pages, list-detail workbenches, settings, history, or operations surfaces, read `references/app-surface-patterns.md`.
+4. If the task includes visible copy, labels, badges, counters, headings, or empty states, read `references/writing-tone.md`.
+5. If the task touches hover, active, focus, disabled, contrast, or state visibility, read `references/accessibility-rules.md`.
+6. If the output starts drifting toward glow, noise, over-styling, or generic AI dashboard aesthetics, read `references/do-dont.md`.
+7. Before finishing, run through `references/quality-gates.md` and `references/review-rubric.md`.
 
 ## Implementation Priorities
 
@@ -56,7 +57,9 @@ Restyle this UI toward a light Codex-like visual system. Use bright, low-saturat
 Prefer outputs that include one or more of:
 
 - normalized color tokens
+- semantic state tokens
 - updated card / panel / button / navigation rules
+- app-surface pattern alignment
 - concise rationale for visual changes
 - a short review pass against `references/quality-gates.md`
 

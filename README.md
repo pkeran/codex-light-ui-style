@@ -7,7 +7,7 @@ Reusable light blue-white UI styling assets for Codex-compatible agents and prom
 - `SKILL.md` — the agent-facing entrypoint
 - `DESIGN.md` — the design-system source of truth
 - `agents/openai.yaml` — UI metadata for skill discovery
-- `references/` — component families, accessibility rules, do/don't rules, quality gates, writing tone
+- `references/` — component families, app surface patterns, accessibility rules, do/don't rules, quality gates, review rubric, writing tone
 - `prompts/codex-light-ui-style.md` — copy-paste short and long prompts plus CSS token starter
 
 ## Visual intent
@@ -65,8 +65,10 @@ and copy either the short or long prompt block.
 │   └── codex-light-ui-style.md
 └── references/
     ├── accessibility-rules.md
+    ├── app-surface-patterns.md
     ├── component-families.md
     ├── do-dont.md
     ├── quality-gates.md
+    ├── review-rubric.md
     └── writing-tone.md
 ```
