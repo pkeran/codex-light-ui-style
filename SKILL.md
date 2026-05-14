@@ -30,11 +30,15 @@ Do not use this skill when the user explicitly wants:
 
 1. Read `DESIGN.md` first.
 2. If the task changes buttons, navigation, cards, tables, drawers, forms, or other UI parts, read `references/component-families.md`.
-3. If the task is about overview pages, list-detail workbenches, settings, history, or operations surfaces, read `references/app-surface-patterns.md`.
-4. If the task includes visible copy, labels, badges, counters, headings, or empty states, read `references/writing-tone.md`.
-5. If the task touches hover, active, focus, disabled, contrast, or state visibility, read `references/accessibility-rules.md`.
-6. If the output starts drifting toward glow, noise, over-styling, or generic AI dashboard aesthetics, read `references/do-dont.md`.
-7. Before finishing, run through `references/quality-gates.md` and `references/review-rubric.md`.
+3. If the task needs translation into CSS variables, Tailwind, shadcn/ui, or common component stacks, read `references/implementation-mappings.md`.
+4. If the task touches hover, active, focus, disabled, selected, or error states, read `references/state-token-matrix.md`.
+5. If the task is about overview pages, list-detail workbenches, settings, history, or operations surfaces, read `references/layout-recipes.md` and `references/app-surface-patterns.md`.
+6. If you need a quick visual anchor for palette or component feel, inspect `assets/palette-preview.svg` and `assets/component-preview.svg`.
+7. If you need page-level examples, read `examples/dashboard.md`, `examples/settings.md`, or `examples/list-detail.md`.
+8. If the task includes visible copy, labels, badges, counters, headings, or empty states, read `references/writing-tone.md`.
+9. If the task touches contrast, focus, readability, or state visibility, read `references/accessibility-rules.md`.
+10. If the output starts drifting toward glow, noise, over-styling, or generic AI dashboard aesthetics, read `references/do-dont.md`.
+11. Before finishing, run through `references/quality-gates.md` and `references/review-rubric.md`.
 
 ## Implementation Priorities
 
@@ -58,8 +62,11 @@ Prefer outputs that include one or more of:
 
 - normalized color tokens
 - semantic state tokens
+- implementation mappings for the target stack
 - updated card / panel / button / navigation rules
+- layout recipes for the target app surface
 - app-surface pattern alignment
+- visual alignment with the preview assets
 - concise rationale for visual changes
 - a short review pass against `references/quality-gates.md`
 
